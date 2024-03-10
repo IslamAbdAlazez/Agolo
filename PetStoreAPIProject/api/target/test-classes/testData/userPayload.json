@@ -1,0 +1,22 @@
+{
+  "createUser": [
+  {
+    "username": "idomyaty",
+    "password": "securePassword123"
+  },
+  {
+    "username": "idomyaty",
+    "password": "securePassword123"
+  }
+],
+"login":[
+  {
+    "username": "john_doeWrong",
+    "password": "securePassword123"
+  },
+  {
+    "username": "idomyaty",
+    "password": "securePassword123"
+  }
+]
+}

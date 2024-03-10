@@ -1,0 +1,31 @@
+{
+  "websites" : [ {
+    "url" : "https://www.sephora.sg/",
+    "title" : "Sephora Singapore",
+    "description" : "Sephora, where beauty beats. Discover the best in makeup, skin care, and\n\t\t\t\tmore from a wide selection of beauty brands. Free shipping for orders above\n\t\t\t\tS$40.\n\t",
+    "createdDate" : "10/30/2019 6:41:56 AM",
+    "author" : null,
+    "category" : null
+  }, {
+    "url" : "https://www.abc.sg/",
+    "title" : "abc test",
+    "description" : "test description\n\t",
+    "createdDate" : "10/30/2023 6:41:56 AM",
+    "author" : null,
+    "category" : null
+  }, {
+    "url" : "url",
+    "title" : "title",
+    "description" : "description",
+    "createdDate" : "03/09/2024",
+    "author" : "idomyate",
+    "category" : "category"
+  }, {
+    "url" : "url",
+    "title" : "title",
+    "description" : "description",
+    "createdDate" : "03/09/2024",
+    "author" : "idomyate",
+    "category" : "category"
+  } ]
+}
