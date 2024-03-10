@@ -18,6 +18,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static org.selenium.constants.FrameworkConstants.WAIT;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.interactions.Actions;
 
 public class BasePage {
 
@@ -28,13 +31,10 @@ public class BasePage {
 	 */
 	protected WebDriver driver;
 	protected WebDriverWait wait;
-
-	/*
-	 * Many waits can also be used in case you want to different time wait for
-	 * different web elements
-	 */
-//	protected WebDriverWait waitLong;
-//	protected WebDriverWait waitShort;
+	
+	public JavascriptExecutor jse ; 
+	public Select select ; 
+	public Actions action ; 
 
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
@@ -76,5 +76,8 @@ public class BasePage {
 	protected void waitForGivenTime(long time) {
 		Uninterruptibles.sleepUninterruptibly(time, TimeUnit.SECONDS);
 	}
-
+	protected static void clickButton(WebElement button) 
+	{
+		button.click();
+	}
 }

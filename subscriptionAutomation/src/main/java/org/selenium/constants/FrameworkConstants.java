@@ -1,5 +1,7 @@
 package org.selenium.constants;
 
+import java.time.Duration;
+
 import org.selenium.utils.ReportPathUtils;
 
 public class FrameworkConstants {
@@ -8,7 +10,7 @@ public class FrameworkConstants {
 	public static final String YES = "yes";
 	public static final String NO = "no";
 
-	private static final int EXPLICIT_WAIT = 10;
+	private static final Duration EXPLICIT_WAIT = Duration.ofSeconds(10);
 	public static final int WAIT = 5;
 
 	public static final String EXTENT_REPORT_FOLDER_PATH = PROJECT_PATH + "/ExtentReports/";
@@ -33,7 +35,7 @@ public class FrameworkConstants {
 		return extentReportFilePath;
 	}
 
-	public static int getExplicitWait() {
+	public static Duration getExplicitWait() {
 		return EXPLICIT_WAIT;
 	}
 
