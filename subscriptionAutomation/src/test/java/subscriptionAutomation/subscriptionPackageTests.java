@@ -2,11 +2,11 @@ package subscriptionAutomation;
 
 import java.io.IOException;
 
-import org.selenium.driver.DriverManagerFirefox;
+import org.selenium.driver.TestBase;
 import org.testng.annotations.Test;
 import org.selenium.pages.HomePage;
 
-public class subscriptionPackageTests extends DriverManagerFirefox{
+public class subscriptionPackageTests extends TestBase{
 	HomePage homeObject ; 
 
 

@@ -5,6 +5,7 @@
     <classes>
       <class name="subscriptionAutomation.subscriptionPackageTests">
         <methods>
+          <include name="stopDriver"/>
           <include name="UserCanRegisterSuccssfully"/>
         </methods>
       </class> <!-- subscriptionAutomation.subscriptionPackageTests -->

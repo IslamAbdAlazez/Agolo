@@ -11,12 +11,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.selenium.components.MyHeader;
+import org.selenium.enums.WaitStrategy;
 
 public class HomePage extends BasePage {
 
-	@FindBy(id="country-btn")
+	@FindBy(id="country-name")
 	WebElement countryBtn ;
 
 	@FindBy(id="country-selct")
@@ -34,31 +35,20 @@ public class HomePage extends BasePage {
 	WebElement mainpkgPrice;
 	@FindBy(xpath = "//*[@id=\"currency-الأساسية\"]/i")
 	WebElement mainpkgCurrency;
-
-
 	@FindBy(id="name-بريميوم")
 	WebElement premPkg;
 	@FindBy(xpath = "//*[@id=\"currency-بريميوم\"]/b")
 	WebElement prempkgPrice;
 	@FindBy(xpath = "//*[@id=\"currency-بريميوم\"]/i")
 	WebElement prempkgCurrency;
-
-
-
-
-
+	
 	String[] countriescodes = {"eg", "ae", "dj"};
-	private MyHeader myHeader;
-
+	
 	public HomePage(WebDriver driver) {
 		super(driver);
 		jse = (JavascriptExecutor) driver; 
 		action = new Actions(driver);
-		myHeader = new MyHeader(driver);
-	}
-
-	public MyHeader getMyHeader() {
-		return myHeader;
+		PageFactory.initElements(driver, this);
 	}
 
 	public HomePage load() {
