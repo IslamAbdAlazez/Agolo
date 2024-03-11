@@ -8,6 +8,7 @@ C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\utils\ConfigLoa
 C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\utils\SubscriptionPackagesDataReader.java
 C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\driver\DriverManager.java
 C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\reports\ExtentManager.java
+C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\utils\JsonObjectHandler.java
 C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\constants\FrameworkConstants.java
 C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\utils\FileFlusher.java
 C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\driver\TestBase.java

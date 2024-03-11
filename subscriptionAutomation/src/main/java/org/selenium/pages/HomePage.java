@@ -3,6 +3,8 @@ package org.selenium.pages;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +12,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.selenium.utils.SubscriptionPackagesDataReader;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 
 public class HomePage extends BasePage {
 
@@ -46,48 +52,55 @@ public class HomePage extends BasePage {
 	
 	String[] countriescodes = {"sa", "bh", "kw"};
 	
+	SubscriptionPackagesDataReader reader;
 	public HomePage(WebDriver driver) {
 		super(driver);
 		jse = (JavascriptExecutor) driver; 
 		action = new Actions(driver);
 		PageFactory.initElements(driver, this);
+		reader = new SubscriptionPackagesDataReader();
 	}
-
-	public HomePage load() {
-		load("");
-		wait.until(ExpectedConditions.titleContains("AskOmDch"));
-		return this;
+		public void selectCountry(String country) {
+			clickButton(countryBtn);
+			if(country.equals("البحرين")) {
+				BahrainDiv.click();
+			}
+			else if(country.equals("الكويت")) {
+				KuwaitDiv.click();
+			}
+		}
+		public List<JSONObject> getSupscriptionForCountry() {
+			List<JSONObject> subscriptionList = new ArrayList<>();
+	    
+	    List<JSONObject> SASubscriptionsData = new ArrayList<JSONObject>();
+	    SASubscriptionsData.add(getSubscriptionData("لايت"));
+	    SASubscriptionsData.add(getSubscriptionData("الأساسية"));
+	    SASubscriptionsData.add(getSubscriptionData("بريميوم"));
+	    subscriptionList.addAll(SASubscriptionsData);   return subscriptionList;
 	}
-
 	
-	public List<List<String>> getCountrySubscriptions() 
-	{   
-		List<List<String>> allCountriesSubscriptionData = new ArrayList<List<String>>();
-		List<String> SubscriptionDataForSaudiArabia = getSubscriptionData();
-		allCountriesSubscriptionData.add(SubscriptionDataForSaudiArabia);
-		clickButton(countryBtn);
-		clickButton(BahrainDiv);
-		List<String> SubscriptionDataForBahrain = getSubscriptionData();
-		allCountriesSubscriptionData.add(SubscriptionDataForBahrain);
-		clickButton(countryBtn);
-		clickButton(KuwaitDiv);
-		List<String> SubscriptionDataForKuwait = getSubscriptionData();
-		allCountriesSubscriptionData.add(SubscriptionDataForKuwait);
-		return allCountriesSubscriptionData;
-	}
-	public List<String> getSubscriptionData() {
-		List<String> countriesSubscriptionsData = new ArrayList<String>();
-        countriesSubscriptionsData.add(lightPkg.getText());
-        countriesSubscriptionsData.add(lightpkgPrice.getText());
-        countriesSubscriptionsData.add(lightpkgCurrency.getText().replace("/شهر", "").replaceAll("\\d+(\\.\\d+)?", ""));
-        
-        countriesSubscriptionsData.add(mainPkg.getText());
-        countriesSubscriptionsData.add(mainpkgPrice.getText());
-        countriesSubscriptionsData.add(mainpkgCurrency.getText().replace("/شهر", "").replaceAll("\\d+(\\.\\d+)?", ""));
-        
-        countriesSubscriptionsData.add(premPkg.getText());
-        countriesSubscriptionsData.add(prempkgPrice.getText());
-        countriesSubscriptionsData.add(prempkgCurrency.getText().replace("/شهر", "").replaceAll("\\d+(\\.\\d+)?", ""));
-        return countriesSubscriptionsData;
-	}
+		public JSONObject getSubscriptionData(String PackageName) {
+		    if(PackageName.equals("لايت")) {
+		    	JSONObject lightPackage = new JSONObject();
+			    lightPackage.put("name", lightPkg.getText());
+			    lightPackage.put("price", lightpkgPrice.getText());
+			    lightPackage.put("currency", lightpkgCurrency.getText().replace("/شهر", "").replaceAll("\\d+(\\.\\d+)?", ""));
+			    return lightPackage;
+		    }
+		    else if(PackageName.equals("الأساسية")) {
+		    	 JSONObject mainPackage = new JSONObject();
+				    mainPackage.put("name", mainPkg.getText());
+				    mainPackage.put("price", mainpkgPrice.getText());
+				    mainPackage.put("currency", mainpkgCurrency.getText().replace("/شهر", "").replaceAll("\\d+(\\.\\d+)?", ""));
+				    return mainPackage;
+		    }
+		    else if(PackageName.equals("بريميوم")) {
+		    	JSONObject premiumPackage = new JSONObject();
+			    premiumPackage.put("name", premPkg.getText());
+			    premiumPackage.put("price", prempkgPrice.getText());
+			    premiumPackage.put("currency", prempkgCurrency.getText().replace("/شهر", "").replaceAll("\\d+(\\.\\d+)?", ""));
+			    return premiumPackage;
+		    }
+			return new JSONObject();
+		}
 }
