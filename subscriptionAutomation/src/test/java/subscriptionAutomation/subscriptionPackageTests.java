@@ -20,7 +20,7 @@ public class subscriptionPackageTests extends TestBase{
 	JsonObjectHandler jsonHandler = new JsonObjectHandler();
 
 	@Test()
-	public void UserCanRegisterSuccssfully() throws InterruptedException, IOException {	 		
+	public void ValidateSubscriptionPackages() throws InterruptedException, IOException {	 		
 	    SubscriptionPackagesDataReader reader = new SubscriptionPackagesDataReader();
 	    List<JSONObject> ExpectedSubscriptionPackageData = reader.getSubscriptionPropertiesAsJSON();
 	    
@@ -38,6 +38,7 @@ public class subscriptionPackageTests extends TestBase{
 	        assertTrue(expectedPackage.toString().contains(actualPackage.get("name").toString()));
 	        assertTrue(expectedPackage.toString().contains(actualPackage.get("currency").toString()));
 	    }
+	    //To Do: replace the country names with dynamic variables (While in this case they are not Input/Output value)
 	    homeObject.selectCountry("البحرين");
 	 // Get actual subscription data for each country
 	    List<JSONObject> ActualSubscriptionPackageDataForSecondCountry = homeObject.getSupscriptionForCountry();
