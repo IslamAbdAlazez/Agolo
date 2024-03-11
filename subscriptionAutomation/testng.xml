@@ -1,0 +1,13 @@
+<suite name="Automation Test Suite" parallel="tests" thread-count="10" data-provider-thread-count="2">
+<test thread-count="1" name="Regression Tests execution over Chrome Browser">
+<parameter name="browser" value="chrome"/>
+
+<classes>
+
+			<class name="subscriptionAutomation.subscriptionPackageTests" />
+
+		</classes>
+</test>
+
+</suite>
+<!--  Suite  -->

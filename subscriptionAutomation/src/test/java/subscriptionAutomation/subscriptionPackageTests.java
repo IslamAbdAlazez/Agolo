@@ -1,19 +1,18 @@
 package subscriptionAutomation;
 
 import java.io.IOException;
-
+import java.util.List;
 import org.selenium.driver.TestBase;
 import org.testng.annotations.Test;
 import org.selenium.pages.HomePage;
+import org.selenium.utils.FileFlusher;
 
 public class subscriptionPackageTests extends TestBase{
-	HomePage homeObject ; 
-
-
-	// 1- User Registration 
-	@Test(priority=1,alwaysRun=true)
-	public void UserCanRegisterSuccssfully() throws InterruptedException, IOException {
-		homeObject = new HomePage(createDriver()); 
-		homeObject.getCountrySubscriptions();
+	HomePage homeObject = new HomePage(createDriver());
+	FileFlusher flush = new FileFlusher();
+	@Test()
+	public void UserCanRegisterSuccssfully() throws InterruptedException, IOException {	 		
+		List<List<String>> supscriptionPackages = homeObject.getCountrySubscriptions();
+		flush.WriteValuesToFile(supscriptionPackages);
 	}
 }

@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-10T22:53:38 UTC" name="Surefire suite" finished-at="2024-03-10T22:53:52 UTC" duration-ms="14048">
+  <suite started-at="2024-03-11T03:32:34 UTC" name="Surefire suite" finished-at="2024-03-11T03:32:49 UTC" duration-ms="15518">
     <groups>
     </groups>
-    <test started-at="2024-03-10T22:53:38 UTC" name="Surefire test" finished-at="2024-03-10T22:53:52 UTC" duration-ms="14048">
+    <test started-at="2024-03-11T03:32:34 UTC" name="Surefire test" finished-at="2024-03-11T03:32:49 UTC" duration-ms="15518">
       <class name="subscriptionAutomation.subscriptionPackageTests">
-        <test-method signature="UserCanRegisterSuccssfully()[pri:1, instance:subscriptionAutomation.subscriptionPackageTests@6c130c45]" started-at="2024-03-10T22:53:38 UTC" name="UserCanRegisterSuccssfully" finished-at="2024-03-10T22:53:52 UTC" duration-ms="13972" status="PASS">
+        <test-method signature="UserCanRegisterSuccssfully()[pri:0, instance:subscriptionAutomation.subscriptionPackageTests@6438a7fe]" started-at="2024-03-11T03:32:34 UTC" name="UserCanRegisterSuccssfully" finished-at="2024-03-11T03:32:47 UTC" duration-ms="13569" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserCanRegisterSuccssfully -->
-        <test-method is-config="true" signature="stopDriver()[pri:0, instance:subscriptionAutomation.subscriptionPackageTests@6c130c45]" started-at="2024-03-10T22:53:52 UTC" name="stopDriver" finished-at="2024-03-10T22:53:55 UTC" duration-ms="2587" status="PASS">
+        <test-method is-config="true" signature="stopDriver()[pri:0, instance:subscriptionAutomation.subscriptionPackageTests@6438a7fe]" started-at="2024-03-11T03:32:47 UTC" name="stopDriver" finished-at="2024-03-11T03:32:49 UTC" duration-ms="1881" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopDriver -->

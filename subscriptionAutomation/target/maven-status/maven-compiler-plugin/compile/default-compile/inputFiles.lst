@@ -5,9 +5,11 @@ C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\reports\ExtentL
 C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\reports\ExtentReport.java
 C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\driver\DriverManager_OC.java
 C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\utils\ConfigLoader.java
+C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\utils\SubscriptionPackagesDataReader.java
 C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\driver\DriverManager.java
 C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\reports\ExtentManager.java
 C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\constants\FrameworkConstants.java
+C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\utils\FileFlusher.java
 C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\driver\TestBase.java
 C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\factories\ExplicitWaitFactory.java
 C:\agolo\Agolo\subscriptionAutomation\src\main\java\org\selenium\enums\WaitStrategy.java
