@@ -35,6 +35,10 @@ public class UserTests {
         logger = LogManager.getLogger(this.getClass());
     }
     @Test
+    public void assertStringTest(
+            Assert.assertEquals("Hello World", "Hello World");
+    )
+    @Test
     public void testNewDummy()
     {
         logger.info("*********Create User*************");
