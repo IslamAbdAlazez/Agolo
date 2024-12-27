@@ -30,12 +30,19 @@ public class UserTests {
         userPayload.setEmail(faker.internet().safeEmailAddress());
         userPayload.setPassword(faker.internet().password(5,10));
         userPayload.setPhone(faker.phoneNumber().cellPhone());
-
         //Logs
 
         logger = LogManager.getLogger(this.getClass());
     }
-
+    @Test
+    public void testDummy()
+    {
+        logger.info("*********Creating User*************");
+        Response response = UserEndPoints.createUser(this.userPayload);
+        response.then().log().all();
+        Assert.assertEquals(response.getStatusCode(),200);
+        logger.info("****************User is created************");
+    }
     @Test(priority = 1)
     public void testPostUser()
     {
