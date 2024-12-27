@@ -34,7 +34,15 @@ public class UserTests {
 
         logger = LogManager.getLogger(this.getClass());
     }
-
+    @Test
+    public void testNewDummy()
+    {
+        logger.info("*********Create User*************");
+        Response response = UserEndPoints.createUser(this.userPayload);
+        response.then().log().all();
+        Assert.assertEquals(response.getStatusCode(),200, "User is not created");
+        logger.info("****************User is now created************");
+    }
     @Test(priority = 1)
     public void testPostUser()
     {
